@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<!--{% load staticfiles %}-->
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>table of new users</title>
+    <link rel="stylesheet" href="{% static "css/mystyle.css"}">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  </head>
+    <body style="background-color: #333333">
+
+    <nav class="navbar navbar-expand-lg">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav">
+          <li class="nav-item active">
+            <a class="nav-link" href="http://127.0.0.1:8000" style="color:#ff2222">Home</a>
+            <a class="nav-link" style="color:#ff2222" href="http://127.0.0.1:8000/user/">Bus Officials</a>
+            <a class="nav-link" style="color:#ff2222" href="http://127.0.0.1:8000/check/">Passengers</a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+
+      <h1 style="color:white">Your Ride Details</h1>
+
+      <div class="djangtwo">
+        {% if access_records %}
+          <table class="table table-striped table-dark" style="background-color: #ff2222">
+            <thead>
+              <tr>
+                <th scope="col">start_stop</th>
+                <th scope="col">end_stop</th>
+                <th scope="col">amount</th>
+                <th scope="col">time</th>
+                <th scope="col">total_seats</th>
+                <th scope="col">total_no_of_people</th>
+              </tr>
+
+            </thead>
+
+            {% for acc in access_records %}
+            <tbody>
+              <tr>
+                <td>{{acc.start_stop}}</td>
+                <td>{{acc.end_stop}}</td>
+                <td>{{acc.amount}}</td>
+                <td>{{acc.timec}}</td>
+                <td>{{acc.seats}}</td>
+                <td>{{acc.total_peo}}</td>
+              </tr>
+            </tbody>
+
+            {% endfor %}
+
+          </table>
+          {% else %}
+            <p>No RECORD FOUND</p>
+          {% endif %}
+
+
+      </div>
+  </body>
+</html>

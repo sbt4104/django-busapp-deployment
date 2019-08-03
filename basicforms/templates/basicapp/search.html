@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Users</title>
+    <!-- Latest compiled and minified CSS -->
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  </head>
+  <body style="background-color: #333333">
+
+  	<nav class="navbar navbar-expand-lg">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav">
+          <li class="nav-item active">
+            <a class="nav-link" href="http://127.0.0.1:8000" style="color:#ff2222">Home</a>
+            <a class="nav-link" style="color:#ff2222" href="http://127.0.0.1:8000/user/">Bus Officials</a>
+            <a class="nav-link" style="color:#ff2222" href="http://127.0.0.1:8000/check/">Passengers</a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+
+
+
+    <div class="jumbotron jumbotron-fluid" style="background-color: #ff2222;color:white">
+  <div class="container">
+    <h1 class="display-6">BUS fare estimator</h1>
+    <p class="lead">How much does bus ride cost in your city? <br>Calculate a fare estimate for your next trip.<br> Simply enter a pickup location and destination to get started.</p>
+  </div>
+</div>
+    <div class="container col-md-8" style="padding-left: 250px;margin-top:50px;color:#ff2222">
+
+       <!-- <form method="POST">
+        {{ form.as_p }}
+        {% csrf_token %}
+        <input type="submit" class='btn btn-primary' value="Submit">
+      </form>-->
+      <form style="color:" method="get" action="/goto/">
+        start stop:<input type="text" name="p" id="id_p" value="{{ query }}"/>
+        end stop:<input type="text" name="q" id="id_q" value="{{ query }}"/>
+      
+  <!--<div class="form-group">
+    <label for="From1">From:</label>
+    <input type="text" class="form-control" id="exampleInputFrom1" aria-describedby="fromHelp" placeholder="Enter Pickup Stop">
+  </div>
+  <div class="form-group">
+    <label for="Destination1">Destination:</label>
+    <input type="text" class="form-control" id="exampleInputDestination1" placeholder="Enter Destination">
+  </div>
+-->
+  <input type="submit"  value="Search" />
+</form>
+    </div>
+
+
+
+  </body>
+</html>
